@@ -1,0 +1,23 @@
+.header {
+  padding: 3vh 5%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 3px solid rgba(0, 0, 0, .06);
+
+  &__dark-mode-toggler {
+    background: none;
+    border: none;
+
+    &__icon {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    &__text {
+      vertical-align: middle;
+    }
+  }
+}

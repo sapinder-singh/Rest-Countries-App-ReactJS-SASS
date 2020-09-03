@@ -1,0 +1,47 @@
+@media screen and (min-width: 1000px) {
+	#root .home-route {
+		.cards-section {
+			padding-left: 5vw;
+			padding-right: 5vw;
+		}
+	}
+}
+
+@media screen and (max-width: 1060px) {
+	#root .details-route {
+		.detailed-country {
+			grid-template-areas:
+			"flag name"
+			"flag data1"
+			"flag data2"
+			"borders borders"; 
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#root .details-route {
+		.detailed-country {
+			grid-template-areas: unset;
+			grid-template-rows: repeat(4, auto);
+
+			>* { grid-area: unset }
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#root .details-route {
+		.detailed-country {
+			&__flag {
+				justify-self: center;
+			}
+			&__borders {
+				flex-direction: column;
+			}
+			.borders__heading {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}

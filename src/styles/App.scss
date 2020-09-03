@@ -1,0 +1,109 @@
+@import './abstracts/colors.scss';
+@import './abstracts/media.scss';
+
+:root {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  background: get-color($LightTheme, Root-BG);
+  transition: background-color .2s ease;
+
+  * {
+    box-sizing: border-box;
+		color: get-color($LightTheme, Text-Color);
+		transition: color, transform;
+		transition-duration: .2s;
+
+    &.search-wrapper__search-box {
+      color: get-color($LightTheme, Search-Box-Text);
+    }
+  }
+}
+
+h1, strong {
+	font-size: 1.5rem;
+}
+
+dt, b {
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+button, select,
+label, input {
+  &:active {
+    outline: 1px solid rgba(0, 0, 0, .6);
+  }
+}
+
+button, select,
+label, input {
+	&:focus {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+[class$=icon] {
+  width: 18px;
+}
+
+
+
+
+
+
+/*********************************    Dark Mode    **************************************/
+#root.dark {
+  background: get-color($DarkTheme, Root-BG);
+
+  * {
+    color: white;
+  }
+
+  .header,
+  .search-wrapper__search-box,
+  .filter-box>*,
+  .cards-section>*,
+  .details-route__back-to-home {
+    background: get-color($DarkTheme, Block-BG);
+  }
+
+  button,
+  select,
+  label {
+    &:active {
+      outline-color: white;
+    }
+  }
+
+  input:focus {
+    outline-color: white;
+  }
+
+  .header__dark-mode-toggler__icon path {
+    fill: white;
+    stroke: white;
+  }
+
+  .search-wrapper__icon path {
+    stroke: white;
+  }
+
+  .header__dark-mode-toggler>* {
+    filter: drop-shadow(0 0 10px);
+  }
+}
