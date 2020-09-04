@@ -46,7 +46,7 @@ export default function SearchBox() {
 
 			<ClearIcon class='search-wrapper__clear-icon' display={ clearIconDisplay } />
 
-			<datalist id='search-history' className='search-wrapper__history' aria-label='search-history'>
+			<datalist id='search-history' className='search-wrapper__history'>
 			{
 				!searchHistory ?
 					null
