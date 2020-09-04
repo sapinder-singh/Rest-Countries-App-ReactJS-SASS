@@ -59,17 +59,18 @@ export default function FilterBox() {
 	return (
 		<div className='filter-box'>
 
-			<label className='filter-box__label' tabIndex='0' htmlFor='.filter-box__options'>
+			<label className='filter-box__label' tabIndex='0' htmlFor='#options'>
 				<span className='filter-box__label__text'>
 					{ labelText }
 				</span>
-				<ArrowIcon className='filter-box__label__arrow-icon' alt='icon-arrow' />
+				<ArrowIcon className='filter-box__label__arrow-icon' />
 			</label>
 
 			<ClearIcon class='filter-box__label__clear-icon' display={clearIconDisplay} />
 
 
-			<datalist className='filter-box__options' style={{ display: optionsPanelDisplay }}>
+			<datalist className='filter-box__options' id="options"
+								style={{ display: optionsPanelDisplay }}>
 				
 				{ 
 					['Africa', 'America', 'Asia', 'Europe', 'Oceania']

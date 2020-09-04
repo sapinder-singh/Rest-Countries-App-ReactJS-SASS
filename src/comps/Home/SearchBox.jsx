@@ -36,7 +36,7 @@ export default function SearchBox() {
 	return (
 		<form className='search-wrapper' onSubmit={ handleSubmit }>
 			
-			<IconSearch className='search-wrapper__search-icon' alt='icon-search' />
+			<IconSearch className='search-wrapper__search-icon' />
 
 			<input type='text' list='search-history'
 					className='search-wrapper__search-box'

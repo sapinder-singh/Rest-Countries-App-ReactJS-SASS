@@ -9,7 +9,7 @@ export default function Header() {
 			<strong className='header__title'>Where in the world?</strong>
 
 			<button className='header__dark-mode-toggler' aria-label='dark-mode'>
-				<ThemeIcon className='header__dark-mode-toggler__icon' alt='icon-theme' />
+				<ThemeIcon className='header__dark-mode-toggler__icon' />
 				<b className='header__dark-mode-toggler__text'>
 					Dark Mode
 				</b>

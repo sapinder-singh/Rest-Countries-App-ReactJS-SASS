@@ -6,7 +6,7 @@ export default function OverviewCard(props) {
 		<Link to={'/detail/' + props.name} key={ props.name }
 					className='overview-card'>
 
-			<img src={ props.flag } className="overview-card__flag" />
+			<img src={ props.flag } className="overview-card__flag" alt="country-flag" />
 
 			<div className='overview-card__text-content'>
 
