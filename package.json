@@ -4,12 +4,15 @@
   "description": "Boilerplate for React apps",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "postinstall": "webpack -p",
+    "start": "node server.js"
   },
   "author": "Sapinder",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
