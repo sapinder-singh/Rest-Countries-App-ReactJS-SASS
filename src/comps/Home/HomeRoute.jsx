@@ -15,13 +15,13 @@ export default function Home() {
 	return (
 		<main className='home-route'>
 
-			<section className="tools-section">
+			<div className="tools-section">
 				<SearchHistoryProvider>
 					<SearchBox/>
 				</SearchHistoryProvider>
 
 				<FilterBox/>
-			</section>
+			</div>
 
 			<section className='cards-section'>
 				{ 
