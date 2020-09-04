@@ -5,7 +5,6 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-	devtool: 'inline-source-map',
 	entry: {
 		index: './src/index.js'
 	},
