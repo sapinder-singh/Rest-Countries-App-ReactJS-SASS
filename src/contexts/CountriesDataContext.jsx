@@ -32,7 +32,7 @@ export class CountriesDataProvider extends React.Component {
 			console.log(err);
 
 			const response = await fetch(`https://restcountries.eu/rest/v2/all
-			?fields=name;flag;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders;`);
+			?fields=name;flag;alpha3Code;population;region;capital;nativeName;subregion;topLevelDomain;currencies;languages;borders;`);
 			data = await response.json();
 		}
 		

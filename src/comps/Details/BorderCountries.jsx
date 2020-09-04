@@ -12,8 +12,8 @@ export default function BorderCountries({ borderCountries }) {
 				{
 					borderCountries.map(country =>
 
-						<Link to={ '/detail/' + country } className='borders__list__country' key={ country }>
-							{ country }
+						<Link to={ '/detail/' + country.alpha3Code } className='borders__list__country' key={ country.alpha3Code }>
+							{ country.name }
 						</Link>
 					)
 				}

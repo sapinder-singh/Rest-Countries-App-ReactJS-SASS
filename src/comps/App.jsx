@@ -25,7 +25,7 @@ export default function App() {
 					<CountriesDataProvider>
 
 						<Route path='/' exact component={HomeRoute} />
-						<Route path='/detail/:countryName' component={DetailsRoute} />
+						<Route path='/detail/:countryCode' component={DetailsRoute} />
 						
 					</CountriesDataProvider>
 				</Switch>

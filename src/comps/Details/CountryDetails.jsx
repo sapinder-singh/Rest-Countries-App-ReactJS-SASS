@@ -1,7 +1,7 @@
 import React from 'react';
 import BorderCountries from './BorderCountries.jsx';
 
-export default function CountryDetails(country, borders) {
+export default function CountryDetails(country, borderCountries) {
 
 	return (
 		<article className='detailed-country' key={ country.name }>
@@ -17,8 +17,8 @@ export default function CountryDetails(country, borders) {
 				{ DataGroup2(country) }
 
 				{
-					borders.length ?
-						<BorderCountries borderCountries={ borders } />
+					borderCountries.length ?
+						<BorderCountries borderCountries={ borderCountries } />
 					: null
 				}
 

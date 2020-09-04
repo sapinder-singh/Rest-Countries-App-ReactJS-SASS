@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function OverviewCard(props) {
 	return (
-		<Link to={'/detail/' + props.name} key={ props.name }
+		<Link to={'/detail/' + props.alpha3Code} key={ props.alpha3Code }
 					className='overview-card'>
 
 			<img src={ props.flag } className="overview-card__flag" alt="country-flag" />

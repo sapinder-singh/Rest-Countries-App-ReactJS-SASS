@@ -12,35 +12,28 @@ export default function DetailsRoute({ match }) {
 
 	function extractClickedCountry() {
 		const extracted = countriesData.filter(country =>
-			country.name === match.params.countryName
+			country.alpha3Code === match.params.countryCode
 		)
 		return extracted;
 	}
 
 	const country = extractClickedCountry();
 
-	const [borderCountries, setBorderCountries] = React.useState([]);
+	const borderCountries = resolveBorders();
 	
-	
-	
+	function resolveBorders() {
 
-	React.useEffect(() => {
-		async function resolveBorders() {
-			const promises = country[0].borders.map(fetchNeighborName);
-
-			setBorderCountries(await Promise.all(promises));
+			const borders = country[0].borders.map(alpha3Code => 
+				{
+					for (const item of countriesData) {
+						if (item.alpha3Code === alpha3Code)
+							return item;
+					}
+				})
+				
+			return borders;
 		}
 
-		// Extract 'alphaCode' for each bordered country and fetch its real name * /
-		async function fetchNeighborName(alphaCode) {
-			return fetch(`https://restcountries.eu/rest/v2/alpha/${alphaCode}?fields=name`)
-				.then(response => response.json())
-				.then(data => data.name);
-		}
-
-		resolveBorders();
-		
-	}, [borderCountries]);
 	
 
 
@@ -54,7 +47,6 @@ export default function DetailsRoute({ match }) {
 
 			{	
 				/* to trigger re-render when fetching borders is done, set condition */
-					borderCountries!==[] &&
 					country.map(data =>
 						CountryDetails(data, borderCountries)
 					)
