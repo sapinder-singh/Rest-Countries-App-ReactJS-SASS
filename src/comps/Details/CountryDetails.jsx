@@ -6,7 +6,7 @@ export default function CountryDetails(country, borders) {
 	return (
 		<article className='detailed-country' key={ country.name }>
 
-				<img src={ country.flag } className='detailed-country__flag' alt='img-flag' />
+				<img src={ country.flag } className='detailed-country__flag' />
 
 				<h1 className='detailed-country__name'>
 					{ country.name }
