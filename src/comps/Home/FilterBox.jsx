@@ -59,7 +59,7 @@ export default function FilterBox() {
 	return (
 		<div className='filter-box'>
 
-			<label className='filter-box__label' tabIndex='0' htmlFor='#options'>
+			<label className='filter-box__label' tabIndex='0'>
 				<span className='filter-box__label__text'>
 					{ labelText }
 				</span>
@@ -69,7 +69,7 @@ export default function FilterBox() {
 			<ClearIcon class='filter-box__label__clear-icon' display={clearIconDisplay} />
 
 
-			<datalist className='filter-box__options' id="options"
+			<div className='filter-box__options' id="options"
 								style={{ display: optionsPanelDisplay }}>
 				
 				{ 
@@ -81,7 +81,7 @@ export default function FilterBox() {
 								</option>
 						)
 				}
-			</datalist>
+			</div>
 
 		</div>
 	)

@@ -29,7 +29,7 @@ $border-radius: 5px;
 
   .search-wrapper,
   .filter-box {
-		margin-bottom: 5vh;
+    margin-bottom: 5vh;
   }
 }
 
@@ -39,9 +39,9 @@ $border-radius: 5px;
   position: relative;
 
   &__search-box {
-		width: 300px;
-		height: 100%;
-		
+    width: 300px;
+    height: 100%;
+
     @supports (width: Min(90vw, 550px)) {
       width: Min(90vw, 550px);
     }
@@ -53,7 +53,7 @@ $border-radius: 5px;
     box-shadow: $box-shadow;
 
     &:focus {
-			box-shadow: $box-shadow inset;
+      box-shadow: $box-shadow inset;
     }
   }
 
@@ -89,11 +89,11 @@ $border-radius: 5px;
   &__label {
     max-height: 70px;
     position: relative;
-		cursor: pointer;
-		
-		&:focus {
-			box-shadow: $box-shadow inset;
-		}
+    cursor: pointer;
+
+    &:focus {
+      box-shadow: $box-shadow inset;
+    }
 
     &__arrow-icon {
       right: 5%;
@@ -119,15 +119,18 @@ $border-radius: 5px;
 
 /*********************************    Cards-Section    **************************************/
 .cards-section {
-  padding: 5vh 10vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   justify-items: center;
   justify-content: space-between;
-  gap: 50px;
+  margin: 5vh 5vw;
+  gap: Min(50px, 5%);
 
-  @supports (gap: Min(50px, 5%)) {
-    gap: Min(50px, 5%);
+  @supports not (gap: Min(50px, 5%)) {
+    margin: 0;
+    .overview-card {
+      margin: 5vh 5vw;
+    }
   }
 }
 
@@ -141,9 +144,10 @@ $border-radius: 5px;
 
   &:hover &__flag {
     transform: translateY(-10%);
-	}
-	&:hover &__text-content {
-		transform: translateY(-5%);
+  }
+
+  &:hover &__text-content {
+    transform: translateY(-5%);
   }
 
   &__flag {
@@ -172,11 +176,11 @@ $border-radius: 5px;
     }
 
     .data-field__value {
-			margin: auto 10px;
-			
-			@supports (margin: auto Max(10px, 5%)) {
-				margin: auto Max(10px, 5%);
-			}
+      margin: auto 10px;
+
+      @supports (margin: auto Max(10px, 5%)) {
+        margin: auto Max(10px, 5%);
+      }
     }
   }
 }

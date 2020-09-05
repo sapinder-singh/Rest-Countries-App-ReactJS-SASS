@@ -1,8 +1,8 @@
 @import './abstracts/colors.scss';
 
 .details-route {
-	padding: 5vh 5vw;
-	min-height: 90vh;
+  padding: 5vh 5vw;
+  min-height: 90vh;
 
   &__back-to-home {
     background: white;
@@ -18,17 +18,27 @@
   grid-template-areas:
     "flag name name"
     "flag data1 data2"
-		"flag borders borders";
-	gap: 2vh 5vw;
+    "flag borders borders";
+  gap: 2vh 5vw;
 
   >* {
     margin: 0
   }
 
+  @supports not (gap: 2vh 5vw) {
+    >* {
+			margin-bottom: 2vh;
+
+			&:not(.detailed-country__flag) {
+				margin-left: 5vh;
+			}
+    }
+  }
+
   &__flag {
-		grid-area: flag;
-		width: Min(500px, 90vw);
-		align-self: stretch;
+    grid-area: flag;
+    width: Min(500px, 90vw);
+    align-self: stretch;
   }
 
   &__name {
@@ -57,11 +67,12 @@
   &__data-field {
     margin: 5px 0;
     display: flex;
-		flex-flow: row nowrap;
+    flex-flow: row nowrap;
 
-		&__key {
-			margin-right: 5px;
-		}
+    &__key {
+      margin-right: 5px;
+    }
+
     &__value {
       margin: 0;
     }
