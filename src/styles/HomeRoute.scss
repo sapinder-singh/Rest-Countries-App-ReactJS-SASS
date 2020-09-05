@@ -118,16 +118,20 @@ $border-radius: 5px;
 
 
 /*********************************    Cards-Section    **************************************/
+$max-card-width: 350px;
+$min-card-width: 225px;
+
 .cards-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($min-card-width, 1fr));
   justify-items: center;
   justify-content: space-between;
   margin: 5vh 5vw;
   gap: Min(50px, 5%);
 
   @supports not (gap: Min(50px, 5%)) {
-    margin: 0;
+		margin: 0;
+		grid-template-columns: repeat(auto-fit, minmax($max-card-width, 1fr));
     .overview-card {
       margin: 5vh 5vw;
     }
@@ -136,7 +140,7 @@ $border-radius: 5px;
 
 .overview-card {
   margin: 0;
-  max-width: 350px;
+  max-width: $max-card-width;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   background: white;
