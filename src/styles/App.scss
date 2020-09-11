@@ -16,8 +16,7 @@ body {
   * {
     box-sizing: border-box;
 		color: get-color($LightTheme, Text-Color);
-		transition: color, transform;
-		transition-duration: .2s;
+		transition: transform .2s;
 
     &.search-wrapper__search-box {
       color: get-color($LightTheme, Search-Box-Text);
