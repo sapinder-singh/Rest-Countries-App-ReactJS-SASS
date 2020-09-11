@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-starter",
+  "name": "rest-countriers",
   "version": "1.0.0",
-  "description": "Boilerplate for React apps",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",
