@@ -1,8 +1,8 @@
 import React from 'react';
-import ClearIcon from '../ClearIcon.jsx';
-import { ReactComponent as IconSearch } from '../../images/search.svg';
-import {CountriesDataContext} from '../../contexts/CountriesDataContext.jsx';
-import {SearchHistoryContext} from '../../contexts/SearchHistoryContext.jsx';
+import ClearIcon from './ClearIcon.jsx';
+import { ReactComponent as IconSearch } from '../images/search.svg';
+import {CountriesDataContext} from '../contexts/CountriesDataContext.jsx';
+import {SearchHistoryContext} from '../contexts/SearchHistoryContext.jsx';
 
 
 export default function SearchBox() {

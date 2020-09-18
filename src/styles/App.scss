@@ -12,6 +12,7 @@ body {
 
 #root {
   background: get-color($LightTheme, Root-BG);
+	min-height: 100vh;
 
   * {
     box-sizing: border-box;

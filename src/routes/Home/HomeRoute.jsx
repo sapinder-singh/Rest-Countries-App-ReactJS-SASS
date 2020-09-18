@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../styles/HomeRoute.scss';
 
-import FilterBox from './FilterBox.jsx';
-import OverviewCard from './OverviewCard.jsx';
-import SearchBox from './SearchBox.jsx';
+import FilterBox from '../../comps/FilterBox.jsx';
+import OverviewCard from '../../comps/OverviewCard.jsx';
+import SearchBox from '../../comps/SearchBox.jsx';
 
 import { CountriesDataContext } from '../../contexts/CountriesDataContext.jsx';
 import { SearchHistoryProvider } from '../../contexts/SearchHistoryContext.jsx';

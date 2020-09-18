@@ -8,32 +8,26 @@ import { CountriesDataContext } from '../../contexts/CountriesDataContext.jsx';
 
 export default function DetailsRoute({ match }) {
 
-	const {countriesData} = React.useContext(CountriesDataContext);
+	const {dataBeenFetched, countriesData} = React.useContext(CountriesDataContext);
+	let country = [], borderCountries;
 
-	function extractClickedCountry() {
-		const extracted = countriesData.filter(country =>
-			country.alpha3Code === match.params.countryCode
-		)
-		return extracted;
+	if(dataBeenFetched) {
+		setCountryDetails();
 	}
 
-	const country = extractClickedCountry();
+	function setCountryDetails() {
+		country = countriesData.filter(country =>
+			country.alpha3Code === match.params.countryCode
+		)
 
-	const borderCountries = resolveBorders();
-	
-	function resolveBorders() {
-
-			const borders = country[0].borders.map(alpha3Code => 
-				{
-					for (const item of countriesData) {
-						if (item.alpha3Code === alpha3Code)
-							return item;
-					}
-				})
-				
-			return borders;
-		}
-
+		borderCountries = country[0].borders.map(alpha3Code => {
+			
+			for (const item of countriesData) {
+				if (item.alpha3Code === alpha3Code)
+					return item;
+			}
+		})
+	}
 	
 
 
@@ -47,9 +41,10 @@ export default function DetailsRoute({ match }) {
 
 			{	
 				/* to trigger re-render when fetching borders is done, set condition */
-					country.map(data =>
-						CountryDetails(data, borderCountries)
-					)
+					country.length &&
+						country.map(data =>
+							CountryDetails(data, borderCountries)
+						)
 			}
 
 		</main>

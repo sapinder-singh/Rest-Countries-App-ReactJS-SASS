@@ -7,7 +7,8 @@ export class CountriesDataProvider extends React.Component {
 		super();
 		this.state = {
 			countriesData: [],
-			filteredData: []
+			filteredData: [],
+			dataBeenFetched: false
 		}
 	}
 
@@ -36,7 +37,7 @@ export class CountriesDataProvider extends React.Component {
 			data = await response.json();
 		}
 		
-		this.setState({countriesData: data});
+		this.setState({countriesData: data, dataBeenFetched: true});
 
 		if(noLocalData) {
 			localStorage.setItem('countriesData', JSON.stringify(data));
@@ -68,6 +69,7 @@ export class CountriesDataProvider extends React.Component {
 		}), 0);
 	}
 
+
 	regionFilter(region) {
 		return this.state.countriesData
 					.filter(country => 
@@ -75,6 +77,7 @@ export class CountriesDataProvider extends React.Component {
 					)
 	}
 
+	
 	nameFilter(name) {
 		return this.state.countriesData
 				.filter(country => 

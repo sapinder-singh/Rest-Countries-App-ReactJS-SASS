@@ -1,7 +1,7 @@
 import React from 'react';
-import ClearIcon from '../ClearIcon.jsx';
-import { ReactComponent as ArrowIcon } from '../../images/dropdown-arrow.svg';
-import { CountriesDataContext } from '../../contexts/CountriesDataContext.jsx';
+import ClearIcon from './ClearIcon.jsx';
+import { ReactComponent as ArrowIcon } from '../images/dropdown-arrow.svg';
+import { CountriesDataContext } from '../contexts/CountriesDataContext.jsx';
 
 const DEFAULT_LABEL_TEXT = 'Filter by Region';
 

@@ -127,7 +127,7 @@ $min-card-width: 225px;
   justify-items: center;
   justify-content: space-between;
   margin: 5vh 5vw;
-  gap: Min(50px, 5%);
+  gap: 50px;
 
   @supports not (gap: Min(50px, 5%)) {
 		margin: 0;
