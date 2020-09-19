@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './styles/App.scss';
 
 import Header from './comps/Header.jsx';
@@ -27,6 +27,7 @@ export default function App() {
 
 						<Route path='/' exact component={HomeRoute} />
 						<Route path='/detail/:countryCode' exact component={DetailsRoute} />	
+						<Route component={()=> <h1>Wrong Path.</h1>} />
 
 					</CountriesDataProvider>
 				</Switch>

@@ -17,7 +17,7 @@ export default function DetailsRoute({ match }) {
 
 	function setCountryDetails() {
 		country = countriesData.filter(country =>
-			country.alpha3Code === match.params.countryCode
+			country.alpha3Code.toLowerCase() === match.params.countryCode.toLowerCase()
 		)
 
 		borderCountries = country[0].borders.map(alpha3Code => {
