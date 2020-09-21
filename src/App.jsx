@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './styles/App.scss';
 
 import Header from './comps/Header.jsx';
@@ -19,18 +19,15 @@ export default function App() {
 	return (
 		<>
 			<Header/>
+			
+			<Switch>
+				<CountriesDataProvider>
 
-			<BrowserRouter>
-				<Switch>
+					<Route path='/' exact component={HomeRoute} />
+					<Route path='/detail/:countryCode' exact component={DetailsRoute} />	
 
-					<CountriesDataProvider>
-
-						<Route path='/' exact component={HomeRoute} />
-						<Route path='/detail/:countryCode' exact component={DetailsRoute} />	
-
-					</CountriesDataProvider>
-				</Switch>
-			</BrowserRouter>
+				</CountriesDataProvider>
+			</Switch>
 		</>
 	)
 }

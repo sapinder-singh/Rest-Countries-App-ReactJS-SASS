@@ -94,8 +94,8 @@ a {
   }
 
   .header__dark-mode-toggler__icon path {
-    fill: white;
-    stroke: white;
+    fill: white !important;
+    stroke: white !important;
   }
 
   .search-wrapper__icon path {

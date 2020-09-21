@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Header.scss';
-import { ReactComponent as ThemeIcon } from '../images/moon.svg';
+import ThemeIcon from './ThemeIcon.jsx';
 
 export default function Header() {
 	return (
