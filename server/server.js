@@ -20,7 +20,7 @@ app.get('*', (req, res) => {
 
     if (err) {
       console.log(err);
-      return res.status(500).send('Some error happened');
+      res.status(500).send('Some error happened');
 		}
 
 		const context = {};
@@ -30,7 +30,7 @@ app.get('*', (req, res) => {
 			</StaticRouter>
 		)
 		
-    return res.send(
+    res.send(
       data.replace(
         '<div id="root"></div>',
         `<div id="root">${app}</div>`
