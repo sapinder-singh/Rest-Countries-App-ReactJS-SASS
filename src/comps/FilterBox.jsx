@@ -1,6 +1,6 @@
 import React from 'react';
 import ClearIcon from './ClearIcon.jsx';
-import { ReactComponent as ArrowIcon } from '../images/dropdown-arrow.svg';
+import DropdownIcon from './DropdownIcon.jsx';
 import { CountriesDataContext } from '../contexts/CountriesDataContext.jsx';
 
 const DEFAULT_LABEL_TEXT = 'Filter by Region';
@@ -63,7 +63,7 @@ export default function FilterBox() {
 				<span className='filter-box__label__text'>
 					{ labelText }
 				</span>
-				<ArrowIcon className='filter-box__label__arrow-icon' />
+				<DropdownIcon className='filter-box__label__dropdown-icon' />
 			</label>
 
 			<ClearIcon class='filter-box__label__clear-icon' display={clearIconDisplay} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import ClearIcon from './ClearIcon.jsx';
-import { ReactComponent as IconSearch } from '../images/search.svg';
+import SearchIcon from './SearchIcon.jsx';
 import {CountriesDataContext} from '../contexts/CountriesDataContext.jsx';
 import {SearchHistoryContext} from '../contexts/SearchHistoryContext.jsx';
 
@@ -36,7 +36,7 @@ export default function SearchBox() {
 	return (
 		<form className='search-wrapper' onSubmit={ handleSubmit }>
 			
-			<IconSearch className='search-wrapper__search-icon' />
+			<SearchIcon className='search-wrapper__search-icon' />
 
 			<input type='text' list='search-history'
 					className='search-wrapper__search-box'
