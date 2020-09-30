@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function ClearIcon(props) {
+export default function ClearIcon({className, display}) {
 	return (
-		<svg className={props.class} style={{display: props.display}} aria-hidden="true" 
+		<svg className={className} style={{display: display}} aria-hidden="true" 
 			focusable="false" data-prefix="fas" data-icon="times-circle" role="img" 
 			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 

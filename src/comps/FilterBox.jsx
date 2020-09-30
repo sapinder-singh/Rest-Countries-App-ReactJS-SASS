@@ -1,6 +1,6 @@
 import React from 'react';
-import ClearIcon from './ClearIcon.jsx';
-import DropdownIcon from './DropdownIcon.jsx';
+import ClearIcon from './Icons/ClearIcon.jsx';
+import DropdownIcon from './Icons/DropdownIcon.jsx';
 import { CountriesDataContext } from '../contexts/CountriesDataContext.jsx';
 
 const DEFAULT_LABEL_TEXT = 'Filter by Region';

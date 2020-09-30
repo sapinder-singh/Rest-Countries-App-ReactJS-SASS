@@ -126,7 +126,8 @@ $min-card-width: 225px;
   grid-template-columns: repeat(auto-fit, minmax($min-card-width, 1fr));
   justify-items: center;
   justify-content: space-between;
-  margin: 5vh 5vw;
+	margin: 5vh 5vw 0;
+	padding-bottom :5vw;
   gap: 50px;
 
   @supports not (gap: Min(50px, 5%)) {

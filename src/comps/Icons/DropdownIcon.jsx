@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DropdownIcon(className) {
+export default function DropdownIcon({className}) {
 	return (
 		<svg className={className} width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' 
 			xmlns='http://www.w3.org/2000/svg'>

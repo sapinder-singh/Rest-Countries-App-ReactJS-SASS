@@ -1,6 +1,6 @@
 import React from 'react';
-import ClearIcon from './ClearIcon.jsx';
-import SearchIcon from './SearchIcon.jsx';
+import ClearIcon from './Icons/ClearIcon.jsx';
+import SearchIcon from './Icons/SearchIcon.jsx';
 import {CountriesDataContext} from '../contexts/CountriesDataContext.jsx';
 import {SearchHistoryContext} from '../contexts/SearchHistoryContext.jsx';
 
@@ -44,7 +44,7 @@ export default function SearchBox() {
 					placeholder='Search for a country...'
 				/>
 
-			<ClearIcon class='search-wrapper__clear-icon' display={ clearIconDisplay } />
+			<ClearIcon className='search-wrapper__clear-icon' display={ clearIconDisplay } />
 
 			<datalist id='search-history' className='search-wrapper__history'>
 			{

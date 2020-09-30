@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Header.scss';
-import ThemeIcon from './ThemeIcon.jsx';
+import ThemeIcon from './Icons/ThemeIcon.jsx';
 
 export default function Header() {
 	return (

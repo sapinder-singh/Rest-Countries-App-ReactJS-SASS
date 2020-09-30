@@ -19,9 +19,9 @@ body {
 		color: get-color($LightTheme, Text-Color);
 		transition: transform .2s;
 
-    &.search-wrapper__search-box {
-      color: get-color($LightTheme, Search-Box-Text);
-    }
+    // &.search-wrapper__search-box {
+    //   color: get-color($LightTheme, Search-Box-Text);
+    // }
   }
 }
 
@@ -65,12 +65,16 @@ a {
 
 
 
-/*********************************    Dark Mode    **************************************/
+/*********************************    Dark Theme    **************************************/
 #root.dark {
   background: get-color($DarkTheme, Root-BG);
 
   * {
-    color: white;
+		color: white !important;
+		
+		&.search-wrapper__search-box::placeholder {
+			color: white;
+		}
   }
 
   .header,
@@ -98,8 +102,8 @@ a {
     stroke: white !important;
   }
 
-  .search-wrapper__search-icon path {
-    stroke: white;
+  .search-wrapper__search-icon > * {
+    stroke: white !important;
   }
 
   .header__dark-mode-toggler>* {
