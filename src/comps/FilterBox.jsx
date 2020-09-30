@@ -66,7 +66,7 @@ export default function FilterBox() {
 				<DropdownIcon className='filter-box__label__dropdown-icon' />
 			</label>
 
-			<ClearIcon class='filter-box__label__clear-icon' display={clearIconDisplay} />
+			<ClearIcon className='filter-box__label__clear-icon' display={clearIconDisplay} />
 
 
 			<div className='filter-box__options' id="options"
