@@ -4,7 +4,7 @@
   padding: 5vh 5vw;
   min-height: 90vh;
 
-  &__back-to-home {
+  &__back-btn {
     background: white;
     padding: 1rem 1.5rem;
     border: none;
@@ -68,14 +68,13 @@
     margin: 5px 0;
     display: flex;
     flex-flow: row nowrap;
+	}
+	&__data-key {
+    margin-right: 5px;
+  }
 
-    &__key {
-      margin-right: 5px;
-    }
-
-    &__value {
-      margin: 0;
-    }
+  &__data-value {
+    margin: 0;
   }
 }
 

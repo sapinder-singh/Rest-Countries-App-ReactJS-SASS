@@ -3,6 +3,9 @@
 $box-shadow: 0 2px 10px rgba(0, 0, 0, .169);
 $border-radius: 5px;
 
+$max-card-width: 350px;
+$min-card-width: 225px;
+
 .home-route {
   [class$=icon] {
     position: absolute;
@@ -19,26 +22,58 @@ $border-radius: 5px;
   }
 }
 
-
-/*********************************    Tools Section    **************************************/
-.tools-section {
+.home-route__tools-section {
   padding: 5vh 5vw 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
 
-  .search-wrapper,
-  .filter-box {
-    margin-bottom: 5vh;
+.home-route__cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-card-width, 1fr));
+  justify-items: center;
+  justify-content: space-between;
+  margin: 5vh 5vw 0;
+  padding-bottom: 5vw;
+  gap: 50px;
+
+  @supports not (gap: Min(50px, 5%)) {
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax($max-card-width, 1fr));
+
+    .overview-card {
+      margin: 5vh 5vw;
+    }
   }
 }
 
-.search-wrapper {
+.search-box,
+.filter-box {
+  margin-bottom: 5vh;
+}
+
+.search-box__input,
+.filter-box__label {
+  &.focused {
+    box-shadow: $box-shadow inset;
+  }
+}
+
+.search-box {
   margin-right: 5vw;
   background: transparent;
   position: relative;
 
-  &__search-box {
+  &__search-icon {
+    left: 1.5rem;
+
+    path {
+      stroke: get-color($LightTheme, Search-Box-Text)
+    }
+  }
+
+  &__input {
     width: 300px;
     height: 100%;
 
@@ -46,22 +81,37 @@ $border-radius: 5px;
       width: Min(90vw, 550px);
     }
 
-    /* reserve left space for search icon [1.5rem + 20px (icon's width)] */
+    /* reserve left space for search icon */
     padding: 1.5rem 2rem 1.5rem calc(1.5rem + 50px);
     border: 0;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-
-    &:focus {
-      box-shadow: $box-shadow inset;
-    }
   }
 
-  &__search-icon {
-    left: 1.5rem;
+  &__dropdown {
+    display: none;
+    list-style: none;
+    width: 100%;
+    opacity: .97;
 
-    path {
-      stroke: get-color($LightTheme, Search-Box-Text)
+    position: absolute;
+    top: 105%;
+    left: 0;
+    z-index: 1;
+    padding: 1.5rem 2rem;
+    margin: 0;
+
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.169);
+    border-radius: 5px;
+  }
+
+  &__dropdown-item {
+    margin: 3% 0;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
     }
   }
 }
@@ -71,7 +121,7 @@ $border-radius: 5px;
   position: relative;
 
   &__label,
-  &__options {
+  &__dropdown {
     box-shadow: $box-shadow;
     width: 250px;
 
@@ -80,7 +130,7 @@ $border-radius: 5px;
     }
 
     display: inline-block;
-    padding: 1.5rem 2rem 1.5rem;
+    padding: 1.5rem 2rem;
     background: white;
     border-radius: $border-radius;
   }
@@ -90,51 +140,32 @@ $border-radius: 5px;
     max-height: 70px;
     position: relative;
     cursor: pointer;
-
-    &:focus {
-      box-shadow: $box-shadow inset;
-    }
-
-    &__dropdown-icon {
-      right: 5%;
-    }
   }
 
-  &__options {
+  &__dropdown-icon {
+    right: 5%;
+  }
+
+  &__dropdown {
     position: absolute;
     top: 105%;
     left: 0;
     width: 100%;
+
     background-color: white;
+    z-index: 1;
     opacity: .97;
 
-    &__region {
-      cursor: pointer;
-      margin: 3% 0;
-    }
+    list-style: none;
+    margin: 0;
   }
-}
 
+  &__dropdown-item {
+    cursor: pointer;
+    margin: 3% 0;
 
-
-/*********************************    Cards-Section    **************************************/
-$max-card-width: 350px;
-$min-card-width: 225px;
-
-.cards-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($min-card-width, 1fr));
-  justify-items: center;
-  justify-content: space-between;
-	margin: 5vh 5vw 0;
-	padding-bottom :5vw;
-  gap: 50px;
-
-  @supports not (gap: Min(50px, 5%)) {
-		margin: 0;
-		grid-template-columns: repeat(auto-fit, minmax($max-card-width, 1fr));
-    .overview-card {
-      margin: 5vh 5vw;
+    &:hover {
+      font-weight: bold;
     }
   }
 }
@@ -151,7 +182,7 @@ $min-card-width: 225px;
     transform: translateY(-10%);
   }
 
-  &:hover &__text-content {
+  &:hover &__details {
     transform: translateY(-5%);
   }
 
@@ -162,30 +193,30 @@ $min-card-width: 225px;
     object-position: center;
   }
 
-  &__text-content {
+  &__details {
     padding: 10%;
   }
 
-  &__text-content__country-name {
+  &__country-name {
     margin-top: 0;
   }
 
-  &__text-content__data-field {
+  &__data-field {
     margin: 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+	}
+	
+  &__data-key {
+    margin: 0;
+  }
 
-    .data-field__key {
-      margin: 0;
-    }
+  &__data-value {
+    margin: auto 10px;
 
-    .data-field__value {
-      margin: auto 10px;
-
-      @supports (margin: auto Max(10px, 5%)) {
-        margin: auto Max(10px, 5%);
-      }
+    @supports (margin: auto Max(10px, 5%)) {
+      margin: auto Max(10px, 5%);
     }
   }
 }

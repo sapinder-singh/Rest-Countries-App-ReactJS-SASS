@@ -11,9 +11,7 @@ export default function DetailsRoute({ match }) {
 	const {dataBeenFetched, countriesData} = React.useContext(CountriesDataContext);
 	let country = [], borderCountries;
 
-	if(dataBeenFetched) {
-		setCountryDetails();
-	}
+	dataBeenFetched && setCountryDetails();
 
 	function setCountryDetails() {
 		country = countriesData.filter(country =>
@@ -34,17 +32,17 @@ export default function DetailsRoute({ match }) {
 	return (
 		<main className='details-route'>
 			<Link to='/'>
-				<button type='button' className='details-route__back-to-home'>
+				<button type='button' className='details-route__back-btn'>
 					&larr; Back
 				</button>
 			</Link>
 
 			{	
-				/* to trigger re-render when fetching borders is done, set condition */
-					country.length &&
-						country.map(data =>
-							CountryDetails(data, borderCountries)
-						)
+				// to trigger re-render when fetching borders is done, set condition
+				country.length &&
+				country.map(data =>
+					CountryDetails(data, borderCountries)
+				)
 			}
 
 		</main>

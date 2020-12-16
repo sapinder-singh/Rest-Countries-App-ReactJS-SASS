@@ -1,5 +1,5 @@
 {
-	"name": "rest-countriers",
+	"name": "rest-countries",
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "webpack-dev-server --mode development --open --hot",

@@ -6,7 +6,7 @@ export class SearchHistoryProvider extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			searchHistory: []
+			searchHistory: null
 		}
 	}
 
@@ -18,28 +18,37 @@ export class SearchHistoryProvider extends React.Component {
 	
 	getSearchHistory() {
 		try {
-			return JSON.parse(localStorage.getItem('searchHistory')) || [];
+			return JSON.parse(localStorage.getItem('searchHistory')) || null;
 		}
 		catch (err) {
-			console.log(err);
-			return []
+			console.error(err);
+			return null
 		}
 	}
 
 	updateSearchHistory(newSearch) {
-		if(this.isRepeatedSearch(newSearch))
-			return;
+		let searchHistory = [newSearch];
 
-		const newSearchHistory = [...this.state.searchHistory, newSearch];
-		
+		if(this.state.searchHistory) {
+			// immediately exit if this is a repeated search
+			if(this.isRepeatedSearch(newSearch)) return;
+			
+			// restrict searchHistory.length to 5
+			searchHistory = this.state.searchHistory.length < 5 ?
+				[newSearch, ...this.state.searchHistory]
+				:
+				[newSearch, ...this.state.searchHistory.slice(0,-1)];
+		}
+
 		try {
-			localStorage.setItem('searchHistory', JSON.stringify(newSearchHistory));
+			localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 		}
 		catch(err) {
-			console.log(err);
+			console.error(err);
+		} 
+		finally {
+			this.setState({searchHistory: searchHistory});
 		}
-		
-		this.setState({searchHistory: newSearchHistory})
 	}
 
 	isRepeatedSearch(newSearch) {
