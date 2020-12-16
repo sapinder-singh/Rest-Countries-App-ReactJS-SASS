@@ -16,7 +16,7 @@ export default function CountryDetails(country, borderCountries) {
 				{ DataGroup2(country) }
 
 				{
-					borderCountries.length &&
+					!borderCountries.length ? null :
 					<BorderCountries borderCountries={ borderCountries } />
 				}
 

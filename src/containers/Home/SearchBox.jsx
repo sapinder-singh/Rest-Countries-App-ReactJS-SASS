@@ -55,7 +55,7 @@ export default function input() {
 				/>
 	
 			{
-				searchHistory &&
+				!searchHistory ? null :
 				<DropDown parent='search-box' itemsArray={ searchHistory } state={ dropDownState } />
 			}
 

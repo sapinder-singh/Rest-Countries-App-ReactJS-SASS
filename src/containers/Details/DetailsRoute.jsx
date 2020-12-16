@@ -39,7 +39,7 @@ export default function DetailsRoute({ match }) {
 
 			{	
 				// to trigger re-render when fetching borders is done, set condition
-				country.length &&
+				!country.length ? null :
 				country.map(data =>
 					CountryDetails(data, borderCountries)
 				)
