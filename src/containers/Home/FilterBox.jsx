@@ -43,7 +43,7 @@ export default function FilterBox() {
 				<span className='filter-box__label-text'>
 					{ filterState.labelText }
 				</span>
-				<DropdownIcon className='filter-box__dropdown-icon' />
+				<DropdownIcon parent='filter-box' />
 			</label>
 
 			<DropDown parent='filter-box' itemsArray={ DropDown_Items } state={ dropDownState } />
