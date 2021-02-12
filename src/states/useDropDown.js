@@ -4,10 +4,11 @@ export default function useDropDown(initialState) {
 
 	const [dropDownState, toggleDropDown] = useReducer(reducer, initialState);
 	
+	/* this function would add 'focused' class to the clicked element,
+		and toggle the dropdown */
 	function reducer(state, action) {
-		// action.filterType can be 'name' or 'region'
-		const elementToFocus = 	action.type === 'name' ? 
-			'.search-box__input' : '.filter-box__label';
+		
+		const elementToFocus = 	action.target;
 		
 		// add 'focused' class to elementToFocus
 		document.querySelector(elementToFocus).classList.toggle('focused');

@@ -20,12 +20,12 @@ export default function FilterBox() {
 	React.useEffect(_=> {
 		const [label, dropDown, clearIcon] = document.querySelector('.filter-box').childNodes;
 
-		label.onclick = () => toggleDropDown({type: 'region'})
+		label.onclick = () => toggleDropDown({target: '.filter-box__label'})
 
 		// listen to click on each filter option
 		dropDown.childNodes.forEach(region =>
 				region.onclick = e => {
-					toggleDropDown({type: 'region'});
+					toggleDropDown({target: '.filter-box__label'});
 					setFilterState(e.target.innerText);
 				} 
 			);

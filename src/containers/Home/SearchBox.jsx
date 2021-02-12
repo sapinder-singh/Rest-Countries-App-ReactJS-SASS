@@ -28,7 +28,7 @@ export default function input() {
 		const clearIcon = document.querySelector('.search-box__clear-icon');
 		const dropDown = document.querySelector('.search-box__dropdown');
 
-		input.onclick = () => toggleDropDown({type: 'name'});
+		input.onclick = () => toggleDropDown({target: '.search-box__input'});
 
 		clearIcon.onclick = ()=> {
 			setFilterState();
@@ -40,7 +40,7 @@ export default function input() {
 			item.onclick = e => {
 				input.value = e.target.innerText;
 				handleSubmit(e);
-				toggleDropDown({type: 'name'});
+				toggleDropDown({target: '.search-box__input'});
 		})
 	})
 	
