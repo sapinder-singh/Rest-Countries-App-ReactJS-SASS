@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Fetch_URL = `http://api.countrylayer.com/v2/all?access_key=${process.env.ACCESS_KEY}`;
+const Fetch_URL = `https://restcountries.com/v2/all?fields=name,flag,alpha3Code,population,
+	region,capital,nativeName,subregion,topLevelDomain,currencies,languages,borders;`;
 
 export const CountriesDataContext = React.createContext();
 
